@@ -25,7 +25,6 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv('HOME') .. '/.vim/undodir'
 vim.opt.undofile = true
 
-
 -- Add minium lines to top and bottom of editor
 vim.opt.scrolloff = 6
 
