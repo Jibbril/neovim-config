@@ -1,18 +1,19 @@
 require('dapui').setup({
-  icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
-  controls = {
-    icons = {
-      pause = '⏸',
-      play = '▶',
-      step_into = '⏎',
-      step_over = '⏭',
-      step_out = '⏮',
-      step_back = 'b',
-      run_last = '▶▶',
-      terminate = '⏹',
-      disconnect = '⏏',
-    },
-  },
+  --Optional icons that may be friendlier in consoles without nerdfonts
+  -- icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
+  -- controls = {
+  --   icons = {
+  --     pause = '⏸',
+  --     play = '▶',
+  --     step_into = '⏎',
+  --     step_over = '⏭',
+  --     step_out = '⏮',
+  --     step_back = 'b',
+  --     run_last = '▶▶',
+  --     terminate = '⏹',
+  --     disconnect = '⏏',
+  --   },
+  -- },
 })
 
 vim.fn.sign_define('DapBreakpoint',{ text ='🟥', texthl ='', linehl ='', numhl =''})
