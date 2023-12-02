@@ -90,3 +90,10 @@ vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by 
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 
+-- --------------------------- dap-ui ---------------------------
+local dap, dapui = require('dap'), require('dapui')
+vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Continue' })
+vim.keymap.set('n', '<F7>', dapui.toggle, { desc = 'Debug: See last session result.' })
+vim.keymap.set('n', '<F9>', dap.toggle_breakpoint, { desc = 'Toggle Breakpoint' })
+vim.keymap.set('n', '<F10>', dap.step_over, { desc = 'Step Over' })
+vim.keymap.set('n', '<F11>', dap.step_into, { desc = 'Step Into' })
