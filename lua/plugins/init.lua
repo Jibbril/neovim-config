@@ -32,8 +32,12 @@ require('lazy').setup({
         config = function()
             vim.cmd.colorscheme 'onedark'
         end,
-    }
+    },
+
+    -- Lualine status bar
+    'nvim-lualine/lualine.nvim',
 })
 
 require('plugins.nvim-tree')
 require('plugins.onedark')
+require('plugins.lualine')
