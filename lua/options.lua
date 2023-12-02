@@ -42,3 +42,15 @@ vim.opt.updatetime = 60
 -- Set bars at 80 and 120 characters
 vim.opt.colorcolumn = '80,120'
 
+-- Always enable mouse
+vim .opt.mouse = 'a'
+
+-- Sync clipboard to OS
+vim.o.clipboard = 'unnamedplus'
+
+-- Case-insensitive searching UNLESS \C or capital in search
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = 'menuone,noselect'
