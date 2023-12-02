@@ -24,6 +24,16 @@ require('lazy').setup({
     -- nvim-tree
     'nvim-tree/nvim-tree.lua',
     'nvim-tree/nvim-web-devicons',
+
+    -- One Dark theme
+    {
+        'navarasu/onedark.nvim',
+        priority = 1000,
+        config = function()
+            vim.cmd.colorscheme 'onedark'
+        end,
+    }
 })
 
 require('plugins.nvim-tree')
+require('plugins.onedark')
