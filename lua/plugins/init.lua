@@ -16,10 +16,14 @@ vim.opt.rtp:prepend(lazypath)
 -- Lazy load plugins
 require('lazy').setup({
     -- Git
-   'tpope/vim-fugitive'
+    'tpope/vim-fugitive',
 
-   -- Set tabstop and shiftwidth automatically
-   'tpope/vim-sleuth'
+    -- Set tabstop and shiftwidth automatically
+    'tpope/vim-sleuth',
+
+    -- nvim-tree
+    'nvim-tree/nvim-tree.lua',
+    'nvim-tree/nvim-web-devicons',
 })
 
-
+require('plugins.nvim-tree')

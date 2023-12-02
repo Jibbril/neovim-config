@@ -1,8 +1,8 @@
+-- --------------------------- General ---------------------------
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Leave insert mode
---
 vim.keymap.set('i', 'jk', '<esc>')
 
 -- Close buffer
@@ -61,4 +61,10 @@ vim.keymap.set('i', '<leader>sb', '[]<left>')
 -- Jump 5 rows at a time.
 vim.keymap.set('n', 'K', '5k', { noremap = true, silent = true })
 vim.keymap.set('n', 'J', '5j', { noremap = true, silent = true })
+
+
+-- --------------------------- nvim-tree---------------------------
+vim.keymap.set('n', '<leader>E', ':NvimTreeFindFileToggle<CR>')
+vim.keymap.set('n', '<leader>e', '::NvimTreeFocus<CR>')
+
 
