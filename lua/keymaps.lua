@@ -1,4 +1,6 @@
 -- --------------------------- general ---------------------------
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -68,7 +70,7 @@ vim.keymap.set('n', '<leader>E', ':NvimTreeFindFileToggle<CR>')
 vim.keymap.set('n', '<leader>e', '::NvimTreeFocus<CR>')
 
 
--- --------------------------- nvim-tree---------------------------
+-- --------------------------- telescope ---------------------------
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>/', function()
@@ -87,3 +89,4 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
+
