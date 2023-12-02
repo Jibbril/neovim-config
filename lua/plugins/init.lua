@@ -68,10 +68,14 @@ require('lazy').setup({
             'rafamadriz/friendly-snippets',
         },
     },
+
+    -- Useful plugin to show you pending keybinds.
+    { 'folke/which-key.nvim', opts = {} },
 })
 
 require('plugins.nvim-tree')
 require('plugins.onedark')
 require('plugins.lualine')
+require('plugins.which-key')
 require('plugins.lsp')
 require('plugins.nvim-cmp')
