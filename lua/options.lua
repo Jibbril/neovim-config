@@ -18,6 +18,7 @@ vim.opt.laststatus = 2
 -- use spaces for tabs and whatnot
 vim.opt.expandtab = true
 vim.opt.smartindent = true
+vim.opt.breakindent = true
 
 -- No vim backups, let undotree handle
 vim.opt.swapfile = false

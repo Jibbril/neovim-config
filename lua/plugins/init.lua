@@ -74,12 +74,22 @@ require('lazy').setup({
 
     -- Git signs
     'lewis6991/gitsigns.nvim',
+
+    -- indent-blankline
+    {
+        -- Add indentation guides even on blank lines
+        'lukas-reineke/indent-blankline.nvim',
+        -- See `:help ibl`
+        main = 'ibl',
+        opts = {},
+    },
 })
 
 require('plugins.gitsigns')
 require('plugins.nvim-tree')
 require('plugins.onedark')
 require('plugins.lualine')
+require('plugins.ibl')
 require('plugins.which-key')
 require('plugins.lsp')
 require('plugins.nvim-cmp')
