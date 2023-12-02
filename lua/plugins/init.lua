@@ -90,6 +90,7 @@ require('lazy').setup({
         opts = {},
         lazy = false,
     },
+
     -- Fuzzy Finder (files, lsp, etc)
     {
         'nvim-telescope/telescope.nvim',
@@ -110,6 +111,16 @@ require('lazy').setup({
             },
         },
     },
+
+    -- Treesitter
+    {
+        -- Highlight, edit, and navigate code
+        'nvim-treesitter/nvim-treesitter',
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter-textobjects',
+        },
+        build = ':TSUpdate',
+    },
 })
 
 require('plugins.telescope')
@@ -117,6 +128,7 @@ require('plugins.gitsigns')
 require('plugins.nvim-tree')
 require('plugins.onedark')
 require('plugins.lualine')
+require('plugins.treesitter')
 require('plugins.ibl')
 require('plugins.comment')
 require('plugins.which-key')
