@@ -83,6 +83,13 @@ require('lazy').setup({
         main = 'ibl',
         opts = {},
     },
+
+    -- Comment
+    {
+        'numToStr/Comment.nvim',
+        opts = {},
+        lazy = false,
+    }
 })
 
 require('plugins.gitsigns')
@@ -90,6 +97,7 @@ require('plugins.nvim-tree')
 require('plugins.onedark')
 require('plugins.lualine')
 require('plugins.ibl')
+require('plugins.comment')
 require('plugins.which-key')
 require('plugins.lsp')
 require('plugins.nvim-cmp')
