@@ -65,7 +65,7 @@ vim.keymap.set('n', 'K', '5k', { noremap = true, silent = true })
 vim.keymap.set('n', 'J', '5j', { noremap = true, silent = true })
 
 
--- --------------------------- nvim-tree ---------------------------
+----------------------------- nvim-tree ---------------------------
 vim.keymap.set('n', '<leader>E', ':NvimTreeFindFileToggle<CR>')
 vim.keymap.set('n', '<leader>e', '::NvimTreeFocus<CR>')
 

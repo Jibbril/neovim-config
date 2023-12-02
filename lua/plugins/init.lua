@@ -121,6 +121,9 @@ require('lazy').setup({
         },
         build = ':TSUpdate',
     },
+
+    -- vim easymotion
+    'easymotion/vim-easymotion'
 })
 
 require('plugins.telescope')
@@ -134,5 +137,6 @@ require('plugins.comment')
 require('plugins.which-key')
 require('plugins.lsp')
 require('plugins.nvim-cmp')
+require('plugins.easymotion')
 
 -- vim: ts=2 sts=2 sw=2 et
