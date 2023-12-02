@@ -71,8 +71,12 @@ require('lazy').setup({
 
     -- Useful plugin to show you pending keybinds.
     { 'folke/which-key.nvim', opts = {} },
+
+    -- Git signs
+    'lewis6991/gitsigns.nvim',
 })
 
+require('plugins.gitsigns')
 require('plugins.nvim-tree')
 require('plugins.onedark')
 require('plugins.lualine')
