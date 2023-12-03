@@ -17,9 +17,11 @@ vim.keymap.set('n', '<leader>w', '<c-w>', { noremap = true })
 -- Save and source file
 vim.keymap.set('n', '<leader>s', ':w<Bar>so<CR>', { noremap = true })
 
--- Enable moving of selection
-vim.keymap.set('v', 'J', ':m \'>+1<CR>gv=gv')
-vim.keymap.set('v', 'K', ':m \'<-2<CR>gv=gv')
+-- Enable moving of lines using alt
+vim.keymap.set('n', '<M-Up>', ':m .-2<CR>==')
+vim.keymap.set('n', '<M-Down>', ':m .+1<CR>==')
+vim.keymap.set('v', '<M-Up>', ':m \'<-2<CR>gv=gv')
+vim.keymap.set('v', '<M-Down>', ':m \'>+1<CR>gv=gv')
 
 -- Enable line join without cursor movement
 vim.keymap.set('n', 'J', 'mzJ`z')
@@ -98,3 +100,15 @@ vim.keymap.set('n', '<F7>', dapui.toggle, { desc = 'Debug: See last session resu
 vim.keymap.set('n', '<F9>', dap.toggle_breakpoint, { desc = 'Toggle Breakpoint' })
 vim.keymap.set('n', '<F10>', dap.step_over, { desc = 'Step Over' })
 vim.keymap.set('n', '<F11>', dap.step_into, { desc = 'Step Into' })
+
+
+--------------------------- hop ---------------------------
+local hop = require('hop')
+local directions = require('hop.hint').HintDirection
+vim.keymap.set('n', 'J', function()
+  hop.hint_words({ direction = directions.AFTER_CURSOR, current_line_only = false, hint_offset = -1 })
+end, {remap=true})
+
+vim.keymap.set('n', 'K', function()
+  hop.hint_words({ direction = directions.BEFORE_CURSOR, current_line_only = false, hint_offset = 1 })
+end, {remap=true})

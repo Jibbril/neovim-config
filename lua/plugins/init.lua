@@ -122,8 +122,9 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
-  -- vim easymotion
-  'easymotion/vim-easymotion',
+  -- vim easymotion/hop
+  --'easymotion/vim-easymotion',
+  'smoka7/hop.nvim',
 
   -- Debug adapter protocol
   'simrat39/rust-tools.nvim',
@@ -143,7 +144,8 @@ require('plugins.comment')
 require('plugins.which-key')
 require('plugins.lsp')
 require('plugins.nvim-cmp')
-require('plugins.easymotion')
+require('plugins.hop')
+-- require('plugins.easymotion')
 require('plugins.dap')
 
 -- vim: ts=2 sts=2 sw=2 et
