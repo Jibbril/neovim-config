@@ -53,6 +53,12 @@ require('lazy').setup({
     },
   },
 
+  -- Trouble, displays a tab of lsp diagnostics errors
+  {
+   "folke/trouble.nvim",
+   dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+
   -- Autocompletion/snippets
   {
     'hrsh7th/nvim-cmp',
@@ -144,6 +150,7 @@ require('plugins.comment')
 require('plugins.which-key')
 require('plugins.lsp')
 require('plugins.nvim-cmp')
+require('plugins.trouble')
 require('plugins.hop')
 -- require('plugins.easymotion')
 require('plugins.dap')
