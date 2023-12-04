@@ -1,4 +1,4 @@
--- Disable netrw (we are using nvim-tree) 
+-- Disable netrw (we are using nvim-tree)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -43,7 +43,7 @@ vim.opt.updatetime = 60
 vim.opt.colorcolumn = '80,120'
 
 -- Always enable mouse
-vim .opt.mouse = 'a'
+vim.opt.mouse = 'a'
 
 -- Sync clipboard to OS
 vim.o.clipboard = 'unnamedplus'
@@ -63,4 +63,16 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
   group = highlight_group,
   pattern = '*',
+})
+
+-- Code folding using treesitter
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+
+vim.api.nvim_create_autocmd('BufReadPost', {
+  pattern = '*',
+  callback = function()
+    -- Delay to automatically unfold files on open.
+    vim.defer_fn(function() vim.cmd('normal! zR') end, 100)
+  end,
 })

@@ -1,5 +1,4 @@
 -- --------------------------- general ---------------------------
-
 -- Remap leader
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.g.mapleader = ' '
@@ -69,6 +68,10 @@ vim.keymap.set('n', 'J', '5j', { noremap = true, silent = true })
 
 -- Enter normal mode when in terminal
 vim.keymap.set('t', '<esc>', '<C-\\><C-n>')
+
+-- Code folding
+vim.keymap.set('n', '<leader>ff', 'zc')
+vim.keymap.set('n', '<leader>u', 'zo')
 
 
 ----------------------------- nvim-tree ---------------------------
