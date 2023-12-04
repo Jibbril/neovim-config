@@ -55,8 +55,8 @@ require('lazy').setup({
 
   -- Trouble, displays a tab of lsp diagnostics errors
   {
-   "folke/trouble.nvim",
-   dependencies = { "nvim-tree/nvim-web-devicons" },
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
   },
 
   -- Autocompletion/snippets
@@ -136,7 +136,14 @@ require('lazy').setup({
   'simrat39/rust-tools.nvim',
   'mfussenegger/nvim-dap',
   'jay-babu/mason-nvim-dap.nvim',
-  'rcarriga/nvim-dap-ui'
+  'rcarriga/nvim-dap-ui',
+
+  -- Harpoon
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    requires = { { "nvim-lua/plenary.nvim" } }
+  },
 })
 
 require('plugins.telescope')
@@ -154,5 +161,6 @@ require('plugins.trouble')
 require('plugins.hop')
 -- require('plugins.easymotion')
 require('plugins.dap')
+require('plugins.harpoon')
 
 -- vim: ts=2 sts=2 sw=2 et
