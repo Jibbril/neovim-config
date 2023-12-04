@@ -121,6 +121,8 @@ end, { remap = true })
 --------------------------- lsp ---------------------------
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
+local formatter = require('utils.error-formatter').wrap_error
+
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
@@ -141,57 +143,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.lsp.buf.format { async = true }
     end, opts)
 
-    local function custom_wrap(text, max_width)
-      local lines = {}
-      local line = ""
-
-      for word in text:gmatch("[^%s]+") do -- Matches non-space sequences
-        if #word > max_width then
-          -- Add a new line before the long word if the current line is not empty
-          if #line > 0 then
-            table.insert(lines, line)
-            table.insert(lines, "")     -- Empty line before the long word
-            line = ""
-          end
-
-          while #word > max_width do
-            table.insert(lines, word:sub(1, max_width))
-            word = word:sub(max_width + 1)
-          end
-
-          if #word > 0 then
-            table.insert(lines, word)     -- Add the remaining part of the long word
-            table.insert(lines, "")       -- Empty line after the long word
-          end
-        else
-          if #line + #word + 1 > max_width then
-            if #line > 0 then
-              table.insert(lines, line)
-              line = ""
-            end
-          end
-
-          if #line > 0 then
-            line = line .. " "
-          end
-          line = line .. word
-        end
-      end
-
-      if #line > 0 then
-        table.insert(lines, line)
-      end
-
-      return "\n" .. table.concat(lines, "\n")
-    end
-
+    -- Open hover window for errors etc in code
     vim.keymap.set('n', 'gh', function()
       vim.diagnostic.open_float({
         --max_width = 70,
         border = 'rounded',
         source = 'always',
         format = function(diagnostic)
-          return custom_wrap(diagnostic.message, 70)
+          return formatter(diagnostic.message, 70)
         end
       })
     end)
