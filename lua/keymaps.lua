@@ -73,6 +73,13 @@ vim.keymap.set('t', '<esc>', '<C-\\><C-n>')
 vim.keymap.set('n', '<leader>ff', 'zc')
 vim.keymap.set('n', '<leader>u', 'zo')
 
+-- Instant fold to certain fold level
+vim.keymap.set('n', '<leader>f1', ':set foldlevel=1<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>f2', ':set foldlevel=2<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>f3', ':set foldlevel=3<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>f4', ':set foldlevel=4<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>f5', ':set foldlevel=5<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>f6', ':set foldlevel=6<CR>', { noremap = true, silent = true })
 
 ----------------------------- nvim-tree ---------------------------
 vim.keymap.set('n', '<leader>E', ':NvimTreeFindFileToggle<CR>')
