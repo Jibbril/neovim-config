@@ -144,6 +144,9 @@ require('lazy').setup({
     branch = "harpoon2",
     requires = { { "nvim-lua/plenary.nvim" } }
   },
+
+  -- Illuminate (highlights usages of word under cursor
+  'RRethy/vim-illuminate',
 })
 
 require('plugins.telescope')
@@ -162,5 +165,7 @@ require('plugins.hop')
 -- require('plugins.easymotion')
 require('plugins.dap')
 require('plugins.harpoon')
+require('plugins.illuminate')
+
 
 -- vim: ts=2 sts=2 sw=2 et
