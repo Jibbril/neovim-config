@@ -147,6 +147,9 @@ require('lazy').setup({
 
   -- Illuminate (highlights usages of word under cursor
   'RRethy/vim-illuminate',
+
+  -- Improve visual layout of inputs boxes
+  'stevearc/dressing.nvim',
 })
 
 require('plugins.telescope')
@@ -166,6 +169,7 @@ require('plugins.hop')
 require('plugins.dap')
 require('plugins.harpoon')
 require('plugins.illuminate')
+require('plugins.dressing')
 
 
 -- vim: ts=2 sts=2 sw=2 et
