@@ -71,7 +71,7 @@ vim.keymap.set('i', '<c-k>', '[]<left>', { desc = '[S]quare brackets' })
 -- vim.keymap.set('n', 'J', '5j', { noremap = true, silent = true })
 
 -- Enter normal mode when in terminal
-vim.keymap.set('t', '<esc>', '<C-\\><C-n>')
+vim.keymap.set('t', 'jkl', '<C-\\><C-n>')
 
 -- Code folding
 vim.keymap.set('n', '<leader>ff', 'zc', { desc = '[F]old current scope' })
@@ -118,7 +118,8 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 
 -- --------------------------- dap-ui ---------------------------
 local dap, dapui = require('dap'), require('dapui')
-vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Continue' })
+vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Continue debugging' })
+vim.keymap.set('n', '<F6>', dap.stop, { desc = 'Stop debugging' })
 vim.keymap.set('n', '<F7>', dapui.toggle, { desc = 'Debug: See last session result.' })
 vim.keymap.set('n', '<F9>', dap.toggle_breakpoint, { desc = 'Toggle Breakpoint' })
 vim.keymap.set('n', '<F10>', dap.step_over, { desc = 'Step Over' })
