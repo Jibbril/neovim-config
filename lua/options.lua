@@ -70,6 +70,6 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
   pattern = '*',
   callback = function()
     -- Delay to automatically unfold files on open.
-    vim.defer_fn(function() vim.cmd('normal! zR') end, 10)
+    vim.defer_fn(function() vim.cmd('normal! zR') end, 30)
   end,
 })
