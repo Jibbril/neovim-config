@@ -129,7 +129,6 @@ require('lazy').setup({
   },
 
   -- vim easymotion/hop
-  --'easymotion/vim-easymotion',
   'smoka7/hop.nvim',
 
   -- Debug adapter protocol
@@ -150,6 +149,9 @@ require('lazy').setup({
 
   -- Improve visual layout of inputs boxes
   'stevearc/dressing.nvim',
+
+  -- Scrollbar/Minimap
+  "petertriho/nvim-scrollbar"
 })
 
 require('plugins.telescope')
@@ -165,11 +167,10 @@ require('plugins.lsp')
 require('plugins.nvim-cmp')
 require('plugins.trouble')
 require('plugins.hop')
--- require('plugins.easymotion')
 require('plugins.dap')
 require('plugins.harpoon')
 require('plugins.illuminate')
 require('plugins.dressing')
-
+require('plugins.nvim-scrollbar')
 
 -- vim: ts=2 sts=2 sw=2 et
