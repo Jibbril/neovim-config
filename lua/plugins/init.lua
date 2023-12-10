@@ -155,10 +155,31 @@ require('lazy').setup({
   "petertriho/nvim-scrollbar",
 
   -- Better code folding
-  {'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async'},
+  { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' },
 
   -- Autosave
-  "Pocco81/auto-save.nvim"
+  "Pocco81/auto-save.nvim",
+
+  -- Rainbow csv
+  {
+    'cameron-wags/rainbow_csv.nvim',
+    config = true,
+    ft = {
+      'csv',
+      'tsv',
+      'csv_semicolon',
+      'csv_whitespace',
+      'csv_pipe',
+      'rfc_csv',
+      'rfc_semicolon'
+    },
+    cmd = {
+      'RainbowDelim',
+      'RainbowDelimSimple',
+      'RainbowDelimQuoted',
+      'RainbowMultiDelim'
+    }
+  },
 })
 
 require('plugins.telescope')
