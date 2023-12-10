@@ -5,6 +5,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Leave insert mode
+vim.keymap.set('i', '<c-c>', '<esc>')
 -- vim.keymap.set('i', 'jk', '<esc>')
 
 -- Close buffer
