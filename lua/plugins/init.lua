@@ -126,6 +126,7 @@ require('lazy').setup({
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
     build = ':TSUpdate',
+    run = ':TSUpdate',
   },
 
   -- vim easymotion/hop
@@ -151,7 +152,10 @@ require('lazy').setup({
   'stevearc/dressing.nvim',
 
   -- Scrollbar/Minimap
-  "petertriho/nvim-scrollbar"
+  "petertriho/nvim-scrollbar",
+
+  -- Better code folding
+  {'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async'}
 })
 
 require('plugins.telescope')
@@ -172,5 +176,6 @@ require('plugins.harpoon')
 require('plugins.illuminate')
 require('plugins.dressing')
 require('plugins.nvim-scrollbar')
+require('plugins.nvim-ufo')
 
 -- vim: ts=2 sts=2 sw=2 et

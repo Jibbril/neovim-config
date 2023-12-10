@@ -62,14 +62,21 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+-- Code folding using nvim-ufo 
+vim.o.foldcolumn = '1' -- '0' is not bad
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+
+
 -- Code folding using treesitter
-vim.o.foldmethod = 'expr'
-vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+-- vim.o.foldmethod = 'expr'
+-- vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 -- vim.api.nvim_create_autocmd('BufReadPost', {
-vim.api.nvim_create_autocmd('BufWinEnter', {
-  pattern = '*',
-  callback = function()
-    -- Delay to automatically unfold files on open.
-    vim.defer_fn(function() vim.cmd('normal! zR') end, 30)
-  end,
-})
+-- vim.api.nvim_create_autocmd('BufWinEnter', {
+--   pattern = '*',
+--   callback = function()
+--     -- Delay to automatically unfold files on open.
+--     vim.defer_fn(function() vim.cmd('normal! zR') end, 30)
+--   end,
+-- })
