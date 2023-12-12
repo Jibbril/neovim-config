@@ -124,6 +124,10 @@ vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Continue debugging' })
 vim.keymap.set('n', '<F6>', dap.terminate, { desc = 'Stop debugging' })
 vim.keymap.set('n', '<F7>', dapui.toggle, { desc = 'Debug: See last session result.' })
 vim.keymap.set('n', '<F9>', dap.toggle_breakpoint, { desc = 'Toggle Breakpoint' })
+vim.keymap.set('n', '<leader>B',
+  function() require('dap').set_breakpoint(vim.fn.input("Breakpoint condition: ")) end,
+  { desc = 'Set breakpoint with condition.' }
+)
 vim.keymap.set('n', '<F10>', dap.step_over, { desc = 'Step Over' })
 vim.keymap.set('n', '<F11>', dap.step_into, { desc = 'Step Into' })
 
