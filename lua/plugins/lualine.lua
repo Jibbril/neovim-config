@@ -19,7 +19,7 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = {'filename'},
-    lualine_b = {'diagnostics'},
+    lualine_b = {'diff','diagnostics'},
     lualine_c = {},
     lualine_x = {'filetype'},
     lualine_y = {},
