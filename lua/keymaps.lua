@@ -88,10 +88,10 @@ vim.keymap.set('n', '<leader>f5', ':set foldlevel=5<CR>', { noremap = true, sile
 vim.keymap.set('n', '<leader>f6', ':set foldlevel=6<CR>', { noremap = true, silent = true })
 
 -- Buffer split
-vim.keymap.set('n', '<leader>vs', ':vsplit<CR>', { desc = '[V]ertical [S]plit' })
+vim.keymap.set('n', '<leader>vs', ':vsplit<CR><C-w>l', { desc = '[V]ertical [S]plit' })
 
--- Select next occurence
-vim.keymap.set('v', 'gb', 'gb', { noremap = true, desc = 'Select next occurrence' })
+-- Newline at current cursor with indentation
+vim.keymap.set('i', '<leader><CR>', '<CR><ESC>ko', { noremap = true, silent = true })
 
 ----------------------------- nvim-tree ---------------------------
 vim.keymap.set('n', '<leader>E', ':NvimTreeFindFileToggle<CR>')
@@ -210,6 +210,7 @@ vim.keymap.set(
 -- vim.keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end)
 -- vim.keymap.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end)
 -- vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)
+
 
 --------------------------- harpoon ---------------------------
 local harpoon = require('harpoon')
