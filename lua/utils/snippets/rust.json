@@ -1,0 +1,9 @@
+{
+        "rprint": {
+                "prefix": "",
+                "body": [
+                        "println(\"${1}{:#?}\",${2});"
+                ],
+                "description": "Rust debug print"
+        }
+}

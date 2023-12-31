@@ -91,7 +91,7 @@ vim.keymap.set('n', '<leader>f6', ':set foldlevel=6<CR>', { noremap = true, sile
 vim.keymap.set('n', '<leader>vs', ':vsplit<CR><C-w>l', { desc = '[V]ertical [S]plit' })
 
 -- Newline at current cursor with indentation
-vim.keymap.set('i', '<leader><CR>', '<CR><ESC>ko', { noremap = true, silent = true })
+vim.keymap.set('i', '<C-n>', '<CR><ESC>ko', { noremap = true, silent = true })
 
 ----------------------------- nvim-tree ---------------------------
 vim.keymap.set('n', '<leader>E', ':NvimTreeFindFileToggle<CR>')
