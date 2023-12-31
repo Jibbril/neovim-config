@@ -225,3 +225,32 @@ vim.keymap.set("n", "<C-y>", function() harpoon:list():select(4) end)
 --------------------------- nvim-ufo ---------------------------
 vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
 vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+
+
+--------------------------- luasnip ---------------------------
+local ls = require 'luasnip';
+
+vim.keymap.set("i", "<C-l>", function()
+  if ls.expand_or_jumpable() then
+    ls.expand_or_jump()
+  end
+end, { silent = true })
+
+
+vim.keymap.set("i", "<C-h>", function()
+  if ls.jumpable() then
+    ls.jump(-1)
+  end
+end, { silent = true })
+
+vim.keymap.set("i", "<C-k>", function()
+  if ls.choice_active() then
+    ls.change_choice(1)
+  end
+end, { silent = true })
+
+vim.keymap.set("i", "<C-j>", function()
+  if ls.choice_active() then
+    ls.change_choice(-1)
+  end
+end, { silent = true })
