@@ -205,6 +205,21 @@ vim.keymap.set(
   function() require("trouble").toggle("workspace_diagnostics") end,
   { desc = 'Toggle workspace trouble tab.' }
 )
+
+vim.keymap.set(
+  "n",
+  "<leader>xn",
+  function() require("trouble").next({skip_groups = true, jump = true}) end,
+  { desc = 'Skip to next trouble item' }
+)
+
+vim.keymap.set(
+  "n",
+  "<leader>xp",
+  function() require("trouble").previous({skip_groups = true, jump = true}) end,
+  { desc = 'Skip to previous trouble item' }
+)
+
 -- vim.keymap.set("n", "<leader>xx", function() require("trouble").toggle() end)
 -- vim.keymap.set("n", "<leader>xd", function() require("trouble").toggle("document_diagnostics") end)
 -- vim.keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end)
@@ -230,26 +245,26 @@ vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 --------------------------- luasnip ---------------------------
 local ls = require 'luasnip';
 
-vim.keymap.set("i", "<C-l>", function()
+vim.keymap.set("i", "<A-l>", function()
   if ls.expand_or_jumpable() then
     ls.expand_or_jump()
-  end
+end
 end, { silent = true })
 
 
-vim.keymap.set("i", "<C-h>", function()
+vim.keymap.set("i", "<A-h>", function()
   if ls.jumpable() then
     ls.jump(-1)
   end
 end, { silent = true })
 
-vim.keymap.set("i", "<C-k>", function()
+vim.keymap.set("i", "<A-k>", function()
   if ls.choice_active() then
     ls.change_choice(1)
   end
 end, { silent = true })
 
-vim.keymap.set("i", "<C-j>", function()
+vim.keymap.set("i", "<A-j>", function()
   if ls.choice_active() then
     ls.change_choice(-1)
   end
