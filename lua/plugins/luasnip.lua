@@ -15,6 +15,12 @@ ls.add_snippets("rust", {
       println!("{}{{:#?}}",{});
     ]],
     { i(1), i(2) }
+  )),
+  s("rp", fmt(
+    [[
+      println!("{}");
+    ]],
+    {i(1)}
   ))
 })
 
