@@ -24,13 +24,13 @@ ls.add_snippets("rust", {
   )),
   s("rifelse", fmt(
     [[
-      if {{ 
+      if {} {{ 
           {} 
       }} else {{
           {} 
       }};
     ]],
-    {i(1), i(2)}
+    {i(1), i(2), i(3)}
   ))
 })
 
