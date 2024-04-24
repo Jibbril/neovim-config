@@ -155,7 +155,7 @@ require('lazy').setup({
   "petertriho/nvim-scrollbar",
 
   -- Better code folding
-  { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' },
+  -- { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' },
 
   -- Autosave
   "Pocco81/auto-save.nvim",
@@ -201,7 +201,7 @@ require('plugins.harpoon')
 require('plugins.illuminate')
 require('plugins.dressing')
 require('plugins.nvim-scrollbar')
-require('plugins.nvim-ufo')
+-- require('plugins.nvim-ufo')
 require('plugins.autosave')
 
 -- vim: ts=2 sts=2 sw=2 et

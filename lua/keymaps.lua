@@ -64,8 +64,8 @@ vim.keymap.set('n', '<leader>l', '$')
 -- Bracket shortcuts
 -- vim.keymap.set('i', '<leader>cb', '{}<left>', { desc = '[C]urly brackets' })
 -- vim.keymap.set('i', '<leader>sb', '[]<left>', { desc = '[S]quare brackets' })
-vim.keymap.set('i', '<c-j>', '{}<left>', { desc = 'Curly brackets' })
-vim.keymap.set('i', '<c-k>', '[]<left>', { desc = 'Square brackets' })
+vim.keymap.set('i', '<c-k>', '{}<left>', { desc = 'Curly brackets' })
+vim.keymap.set('i', '<c-j>', '[]<left>', { desc = 'Square brackets' })
 vim.keymap.set('i', '<c-l>', '()<left>', { desc = 'Parenthesis' })
 
 -- Jump 5 rows at a time.
@@ -239,8 +239,8 @@ vim.keymap.set("n", "<C-y>", function() harpoon:list():select(4) end)
 
 
 --------------------------- nvim-ufo ---------------------------
-vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+-- vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+-- vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 
 
 --------------------------- luasnip ---------------------------
