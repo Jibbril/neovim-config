@@ -49,6 +49,17 @@ vim.keymap.set('v', '<leader>d', '"_d', { desc = '[D]elete to void' })
 -- Rename word under cursor
 -- vim.keymap.set('n', '<leader>rn', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = '[R]e[N]ame' })
 
+-- Rename words in line
+local function substitute_in_line()
+  local word = vim.fn.input("Word to replace: ")
+  if word == "" then return end
+  local new_word = vim.fn.input("Replace with: ")
+  if new_word == "" then return end
+  vim.cmd("s/" .. word .. "/" .. new_word .. "/g")
+end
+
+vim.keymap.set('n', '<leader>rl', substitute_in_line, { noremap = true, silent = true, desc = '[R]ename in [L]ine' })
+
 -- Add Empty line below
 vim.keymap.set('n', '<CR>', 'o<esc>', { noremap = true })
 vim.keymap.set('i', '<c-CR>', '<esc>o', { noremap = true })
