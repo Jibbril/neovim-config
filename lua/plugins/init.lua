@@ -180,6 +180,9 @@ require('lazy').setup({
       'RainbowMultiDelim'
     }
   },
+
+  -- Nvim autotag
+  "windwp/nvim-ts-autotag"
 })
 
 require('plugins.telescope')
@@ -203,5 +206,6 @@ require('plugins.dressing')
 require('plugins.nvim-scrollbar')
 -- require('plugins.nvim-ufo')
 require('plugins.autosave')
+require('plugins.nvim-ts-autotag')
 
 -- vim: ts=2 sts=2 sw=2 et
