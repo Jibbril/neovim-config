@@ -139,11 +139,11 @@ require('lazy').setup({
   'rcarriga/nvim-dap-ui',
 
   -- Harpoon
-  {
-    "ThePrimeagen/harpoon",
-    branch = "harpoon2",
-    requires = { { "nvim-lua/plenary.nvim" } }
-  },
+  -- {
+  --   "ThePrimeagen/harpoon",
+  --   branch = "harpoon2",
+  --   requires = { { "nvim-lua/plenary.nvim" } }
+  -- },
 
   -- Illuminate (highlights usages of word under cursor
   'RRethy/vim-illuminate',
@@ -200,7 +200,7 @@ require('plugins.luasnip')
 require('plugins.trouble')
 require('plugins.hop')
 require('plugins.dap')
-require('plugins.harpoon')
+-- require('plugins.harpoon')
 require('plugins.illuminate')
 require('plugins.dressing')
 require('plugins.nvim-scrollbar')

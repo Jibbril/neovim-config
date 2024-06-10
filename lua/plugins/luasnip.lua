@@ -16,12 +16,14 @@ ls.add_snippets("rust", {
     ]],
     { i(1), i(2) }
   )),
+
   s("rp", fmt(
     [[
       println!("{}");
     ]],
     {i(1)}
   )),
+
   s("rifelse", fmt(
     [[
       if {} {{ 
@@ -32,11 +34,19 @@ ls.add_snippets("rust", {
     ]],
     {i(1), i(2), i(3)}
   )),
+
   s("st", fmt(
     [[
       "{}"
     ]],
     {i(1)}
+  )),
+
+  s("allowdead", fmt(
+    [[
+      #[allow(dead_code)] 
+    ]],
+    {}
   ))
 })
 
