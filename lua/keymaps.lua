@@ -86,6 +86,7 @@ vim.keymap.set('i', '<c-l>', '()<left>', { desc = 'Parenthesis' })
 -- Enter normal mode when in terminal
 vim.keymap.set('t', 'jkl', '<C-\\><C-n>')
 vim.keymap.set('n', 'ts', ':terminal<CR>', { desc = '[t]erminal [s]tart' })
+vim.keymap.set('n', '<leader>nt', ':rightbelow vsplit | terminal<CR>', { desc = '[n]ew [t]erminal' })
 
 -- Code folding
 vim.keymap.set('n', '<leader>ff', 'zc', { desc = '[F]old current scope' })
