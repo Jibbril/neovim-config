@@ -19,6 +19,9 @@ vim.opt.laststatus = 2
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.breakindent = true
+vim.opt.tabstop = 8
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 
 -- No vim backups, let undotree handle
 vim.opt.swapfile = false

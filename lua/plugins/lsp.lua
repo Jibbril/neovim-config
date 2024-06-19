@@ -21,6 +21,7 @@ local servers = {
   tsserver = {},
   html = { filetypes = { 'html', 'twig', 'hbs'} },
   tailwindcss = {},
+  sqlls = {},
 
   lua_ls = {
     Lua = {
