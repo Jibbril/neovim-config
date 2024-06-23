@@ -47,6 +47,15 @@ ls.add_snippets("rust", {
       #[allow(dead_code)] 
     ]],
     {}
+  )),
+
+  s("rfn", fmt(
+    [[
+      fn {}({}) -> {} {{
+        {}
+      }};
+    ]],
+    {i(1), i(2), i(3), i(4)}
   ))
 })
 
