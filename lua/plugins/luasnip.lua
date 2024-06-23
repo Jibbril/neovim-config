@@ -52,7 +52,7 @@ ls.add_snippets("rust", {
   s("rfn", fmt(
     [[
       fn {}({}) -> {} {{
-        {}
+          {}
       }}
     ]],
     {i(1), i(2), i(3), i(4)}
