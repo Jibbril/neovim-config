@@ -182,7 +182,10 @@ require('lazy').setup({
   },
 
   -- Nvim autotag
-  "windwp/nvim-ts-autotag"
+  "windwp/nvim-ts-autotag",
+
+  -- Undotree
+  'mbbill/undotree'
 })
 
 require('plugins.telescope')

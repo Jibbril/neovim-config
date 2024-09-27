@@ -282,3 +282,7 @@ vim.keymap.set("i", "<A-j>", function()
     ls.change_choice(-1)
   end
 end, { silent = true })
+
+
+--------------------------- undotree ---------------------------
+vim.keymap.set('n', '<leader>ut', vim.cmd.UndotreeToggle)
