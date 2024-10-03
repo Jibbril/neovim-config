@@ -39,8 +39,8 @@ vim.keymap.set('n', '<leader>Y', '"+Y')
 vim.keymap.set('v', '<leader>y', '"+y')
 
 -- Paste from clipboard
-vim.keymap.set('n', '<leader>p', '"*p', { desc = '[P]aste from clipboard' })
-vim.keymap.set('n', '<leader>P', '"*P', { desc = '[P]aste from clipboard' })
+vim.keymap.set('n', '<leader>p', '"+p', { desc = '[P]aste from clipboard' })
+vim.keymap.set('n', '<leader>P', '"+P', { desc = '[P]aste from clipboard' })
 
 --  Delete to void
 vim.keymap.set('n', '<leader>d', '"_d', { desc = '[D]elete to void' })
