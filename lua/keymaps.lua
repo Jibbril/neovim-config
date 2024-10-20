@@ -51,14 +51,25 @@ vim.keymap.set('v', '<leader>d', '"_d', { desc = '[D]elete to void' })
 
 -- Rename words in line
 local function substitute_in_line()
-  local word = vim.fn.input("Word to replace: ")
+  local word = vim.fn.input("Word to replace in line: ")
   if word == "" then return end
   local new_word = vim.fn.input("Replace with: ")
   if new_word == "" then return end
   vim.cmd("s/" .. word .. "/" .. new_word .. "/g")
 end
 
+-- Rename words in line
+local function substitute_in_globally_in_file()
+  local word = vim.fn.input("Word to replace in file: ")
+  if word == "" then return end
+  local new_word = vim.fn.input("Replace with: ")
+  if new_word == "" then return end
+  vim.cmd("%s/" .. word .. "/" .. new_word .. "/g")
+end
+
+
 vim.keymap.set('n', '<leader>rl', substitute_in_line, { noremap = true, silent = true, desc = '[R]ename in [L]ine' })
+vim.keymap.set('n', '<leader>rf', substitute_in_globally_in_file, { noremap = true, silent = true, desc = '[R]ename in [F]ile' })
 
 -- Add Empty line below
 vim.keymap.set('n', '<CR>', 'o<esc>', { noremap = true })
