@@ -7,6 +7,7 @@ vim.g.maplocalleader = ' '
 -- Leave insert mode
 vim.keymap.set('i', '<c-c>', '<esc>')
 vim.keymap.set('i', 'jk', '<esc>')
+vim.keymap.set('i', 'fd', '<esc>')
 
 -- Close buffer
 vim.keymap.set('n', '<leader>c', ':bd<CR>')
