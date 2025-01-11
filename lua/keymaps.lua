@@ -28,8 +28,8 @@ vim.keymap.set('v', '<M-Down>', ':m \'>+1<CR>gv=gv')
 vim.keymap.set('n', '<leader>j', 'mzJ`z', { desc = '[J]oin line below' })
 
 -- Lock cursor in middle while jumping half pages
-vim.keymap.set('n', '<c-d>', '<c-d>zz')
-vim.keymap.set('n', '<c-u>', '<c-u>zz')
+-- vim.keymap.set('n', '<c-d>', '<c-d>zz')
+-- vim.keymap.set('n', '<c-u>', '<c-u>zz')
 
 -- Paste over selection without losing yank
 vim.keymap.set('x', '<leader>p', '"_dP')

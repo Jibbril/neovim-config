@@ -185,7 +185,10 @@ require('lazy').setup({
   "windwp/nvim-ts-autotag",
 
   -- Undotree
-  'mbbill/undotree'
+  'mbbill/undotree',
+
+  -- Neoscroll
+  'karb94/neoscroll.nvim'
 })
 
 require('plugins.telescope')
@@ -211,5 +214,6 @@ require('plugins.nvim-scrollbar')
 require('plugins.autosave')
 require('plugins.nvim-ts-autotag')
 require('plugins.fugitive')
+require('plugins.neoscroll')
 
 -- vim: ts=2 sts=2 sw=2 et
