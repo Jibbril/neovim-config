@@ -19,10 +19,7 @@ local servers = {
   pyright = {},
   rust_analyzer = {},
   tsserver = {},
-  html = { filetypes = { 'html', 'twig', 'hbs'} },
-  tailwindcss = {},
   sqlls = {},
-
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },

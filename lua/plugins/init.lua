@@ -135,6 +135,7 @@ require('lazy').setup({
   -- Debug adapter protocol
   'simrat39/rust-tools.nvim',
   'mfussenegger/nvim-dap',
+  'mfussenegger/nvim-dap-python',
   'jay-babu/mason-nvim-dap.nvim',
   'rcarriga/nvim-dap-ui',
 
