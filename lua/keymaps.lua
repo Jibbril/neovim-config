@@ -47,9 +47,6 @@ vim.keymap.set('n', '<leader>P', '"+P', { desc = '[P]aste from clipboard' })
 vim.keymap.set('n', '<leader>d', '"_d', { desc = '[D]elete to void' })
 vim.keymap.set('v', '<leader>d', '"_d', { desc = '[D]elete to void' })
 
--- Rename word under cursor
--- vim.keymap.set('n', '<leader>rn', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = '[R]e[N]ame' })
-
 -- Rename words in line
 local function substitute_in_line()
   local word = vim.fn.input("Word to replace in line: ")
@@ -79,6 +76,11 @@ vim.keymap.set('i', '<c-CR>', '<esc>o', { noremap = true })
 -- Tab handling
 vim.keymap.set('n', '<leader>tn', ':tabnew<CR>', { desc = '[T]ab [N]ew' })
 vim.keymap.set('n', '<leader>tc', ':tabclose<CR>', { desc = '[T]ab [C]lose' })
+
+-- Remove F1 key since it's never used and keyboard layout causes issues
+-- when trying to use ESC
+vim.keymap.set('', '<F1>', '<ESC>', { noremap = true, silent = true })
+vim.keymap.set('i', '<F1>', '<ESC>', { noremap = true, silent = true })
 
 -- Jump to start/end
 vim.keymap.set('n', '<leader>h', '_')
