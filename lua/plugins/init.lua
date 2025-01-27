@@ -138,6 +138,7 @@ require('lazy').setup({
   'mfussenegger/nvim-dap-python',
   'jay-babu/mason-nvim-dap.nvim',
   'rcarriga/nvim-dap-ui',
+  'nvim-neotest/nvim-nio',
 
   -- Harpoon
   -- {
