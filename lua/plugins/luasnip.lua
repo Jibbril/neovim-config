@@ -8,7 +8,22 @@ local i = ls.insert_node;
 local fmt = require('luasnip.extras.fmt').fmt;
 local c = ls.choice;
 
--- Rust println
+ls.add_snippets("python", {
+  s("ppv", fmt(
+    [[
+      print(f"{}{{{}}}",{});
+    ]],
+    { i(1), i(2), i(3) }
+  )),
+
+  s("pp", fmt(
+    [[
+      print("{}");
+    ]],
+    { i(1) }
+  )),
+})
+
 ls.add_snippets("rust", {
   s("rpv", fmt(
     [[
