@@ -11,7 +11,7 @@ local c = ls.choice;
 ls.add_snippets("python", {
   s("ppv", fmt(
     [[
-      print(f"{}{{{}}}",{});
+      print(f"{}{{{}}}");
     ]],
     { i(1), i(2), i(3) }
   )),
