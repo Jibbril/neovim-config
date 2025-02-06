@@ -1,5 +1,4 @@
 -- Introductory video to snippet construction/functionality can be found below
-
 -- https://www.youtube.com/watch?v=FmHhonPjvvA
 
 local ls = require 'luasnip';
@@ -13,7 +12,7 @@ ls.add_snippets("python", {
     [[
       print(f"{}{{{}}}");
     ]],
-    { i(1), i(2), i(3) }
+    { i(1), i(2) }
   )),
 
   s("pp", fmt(
