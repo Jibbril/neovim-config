@@ -13,7 +13,7 @@ require('neoscroll').setup({
   easing = 'linear',           -- Default easing function
   pre_hook = function()        -- Function to run before the scrolling animation starts
       -- Center cursor before scrolling
-      vim.cmd("normal! zz")
+      -- vim.cmd("normal! zz")
   end,
   post_hook = nil,             -- Function to run after the scrolling animation ends
   performance_mode = false,    -- Disable "Performance Mode" on all buffers.
