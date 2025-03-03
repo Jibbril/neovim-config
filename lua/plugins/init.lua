@@ -140,13 +140,6 @@ require('lazy').setup({
   'rcarriga/nvim-dap-ui',
   'nvim-neotest/nvim-nio',
 
-  -- Harpoon
-  -- {
-  --   "ThePrimeagen/harpoon",
-  --   branch = "harpoon2",
-  --   requires = { { "nvim-lua/plenary.nvim" } }
-  -- },
-
   -- Illuminate (highlights usages of word under cursor
   'RRethy/vim-illuminate',
 
@@ -155,9 +148,6 @@ require('lazy').setup({
 
   -- Scrollbar/Minimap
   "petertriho/nvim-scrollbar",
-
-  -- Better code folding
-  -- { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' },
 
   -- Autosave
   "Pocco81/auto-save.nvim",
@@ -208,11 +198,9 @@ require('plugins.luasnip')
 require('plugins.trouble')
 require('plugins.hop')
 require('plugins.dap')
--- require('plugins.harpoon')
 require('plugins.illuminate')
 require('plugins.dressing')
 require('plugins.nvim-scrollbar')
--- require('plugins.nvim-ufo')
 require('plugins.autosave')
 require('plugins.nvim-ts-autotag')
 require('plugins.fugitive')
