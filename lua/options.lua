@@ -65,6 +65,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+-- Set spellchecking for Markdown
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown", "text", "tex" },
+  callback = function()
+    vim.opt_local.spell = true
+    vim.opt_local.spelllang = "en_us"
+  end
+})
+
 -- Code folding 
 vim.o.foldcolumn = '0' -- '0' is not bad
 vim.o.foldlevel = 2
