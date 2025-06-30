@@ -1,14 +1,40 @@
 local rt = require("rust-tools")
-local mason_registry = require('mason-registry')
+local dap = require("dap")
 
-local codelldb = mason_registry.get_package('codelldb')
-local extension_path = codelldb:get_install_path() .. '/extension/'
-local codelldb_path = extension_path .. 'adapter/codelldb'
-local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
+-- Set up the codelldb adapter path
+local mason_data = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/"
+local codelldb_path = mason_data .. "adapter/codelldb"
+local liblldb_path  = mason_data .. "lldb/lib/liblldb.so"  
 
+-- Configure nvim-dap adapter
+dap.adapters.codelldb = {
+  type = "server",
+  port = "${port}",
+  executable = {
+    command = codelldb_path,
+    args = { "--port", "${port}" },
+    -- detached = false,
+  }
+}
+
+-- Configure launch configurations for Rust
+dap.configurations.rust = {
+  {
+    name = "Launch Rust executable",
+    type = "codelldb",
+    request = "launch",
+    program = function()
+      return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
+    end,
+    cwd = "${workspaceFolder}",
+    stopOnEntry = false,
+  },
+}
+
+-- Initialize rust-tools with the dap adapter
 rt.setup({
   dap = {
-    adapter = require('rust-tools.dap').get_codelldb_adapter(codelldb_path,liblldb_path),
+    adapter = dap.adapters.codelldb,
   },
   server = {
     on_attach = function(_, bufnr)
@@ -24,3 +50,4 @@ rt.setup({
     }
   }
 })
+

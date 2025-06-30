@@ -40,7 +40,7 @@ require('mason-nvim-dap').setup {
   handlers = {},
   ensure_installed = {
     -- Update this to ensure that you have the debuggers for the langs you want
-    'delve',
+    -- 'delve',
     'python',
   },
 }

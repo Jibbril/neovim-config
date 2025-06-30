@@ -180,7 +180,9 @@ require('lazy').setup({
   'mbbill/undotree',
 
   -- Neoscroll
-  'karb94/neoscroll.nvim'
+  'karb94/neoscroll.nvim',
+  
+  "supermaven-inc/supermaven-nvim",
 })
 
 require('plugins.telescope')
@@ -205,5 +207,6 @@ require('plugins.autosave')
 require('plugins.nvim-ts-autotag')
 require('plugins.fugitive')
 require('plugins.neoscroll')
+require('plugins.supermaven')
 
 -- vim: ts=2 sts=2 sw=2 et
