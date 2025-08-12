@@ -9,116 +9,23 @@ vim.keymap.set('i', '<c-c>', '<esc>')
 vim.keymap.set('i', 'jk', '<esc>')
 vim.keymap.set('i', 'fd', '<esc>')
 
--- Close buffer
-vim.keymap.set('n', '<leader>c', ':bd<CR>')
-
--- Rebind window command
-vim.keymap.set('n', '<leader>w', '<c-w>', { noremap = true, desc = '[W]indow command' })
-
--- Save and source file
-vim.keymap.set('n', '<leader>s', ':w<Bar>so<CR>', { noremap = true })
-
--- Enable moving of lines using alt
-vim.keymap.set('n', '<M-Up>', ':m .-2<CR>==')
-vim.keymap.set('n', '<M-Down>', ':m .+1<CR>==')
-vim.keymap.set('v', '<M-Up>', ':m \'<-2<CR>gv=gv')
-vim.keymap.set('v', '<M-Down>', ':m \'>+1<CR>gv=gv')
-
--- Enable line join without cursor movement
-vim.keymap.set('n', '<leader>j', 'mzJ`z', { desc = '[J]oin line below' })
-
--- Lock cursor in middle while jumping half pages
--- vim.keymap.set('n', '<c-d>', '<c-d>zz')
--- vim.keymap.set('n', '<c-u>', '<c-u>zz')
-
--- Paste over selection without losing yank
-vim.keymap.set('x', '<leader>p', '"_dP')
-
---  Copy to clipboard
-vim.keymap.set('n', '<leader>y', '"+y')
-vim.keymap.set('n', '<leader>Y', '"+Y')
-vim.keymap.set('v', '<leader>y', '"+y')
-
--- Paste from clipboard
-vim.keymap.set('n', '<leader>p', '"+p', { desc = '[P]aste from clipboard' })
-vim.keymap.set('n', '<leader>P', '"+P', { desc = '[P]aste from clipboard' })
-
---  Delete to void
-vim.keymap.set('n', '<leader>d', '"_d', { desc = '[D]elete to void' })
-vim.keymap.set('v', '<leader>d', '"_d', { desc = '[D]elete to void' })
-
--- Rename words in line
-local function substitute_in_line()
-  local word = vim.fn.input("Word to replace in line: ")
-  if word == "" then return end
-  local new_word = vim.fn.input("Replace with: ")
-  if new_word == "" then return end
-  vim.cmd("s/" .. word .. "/" .. new_word .. "/g")
-end
-
--- Rename words in line
-local function substitute_in_globally_in_file()
-  local word = vim.fn.input("Word to replace in file: ")
-  if word == "" then return end
-  local new_word = vim.fn.input("Replace with: ")
-  if new_word == "" then return end
-  vim.cmd("%s/" .. word .. "/" .. new_word .. "/g")
-end
-
-
-vim.keymap.set('n', '<leader>rl', substitute_in_line, { noremap = true, silent = true, desc = '[R]ename in [L]ine' })
-vim.keymap.set('n', '<leader>rf', substitute_in_globally_in_file, { noremap = true, silent = true, desc = '[R]ename in [F]ile' })
-
--- Add Empty line below
-vim.keymap.set('n', '<CR>', 'o<esc>', { noremap = true })
-vim.keymap.set('i', '<c-CR>', '<esc>o', { noremap = true })
-
--- Tab handling
-vim.keymap.set('n', '<leader>tn', ':tabnew<CR>', { desc = '[T]ab [N]ew' })
-vim.keymap.set('n', '<leader>tc', ':tabclose<CR>', { desc = '[T]ab [C]lose' })
-
 -- Remove F1 key since it's never used and keyboard layout causes issues
 -- when trying to use ESC
 vim.keymap.set('', '<F1>', '<ESC>', { noremap = true, silent = true })
 vim.keymap.set('i', '<F1>', '<ESC>', { noremap = true, silent = true })
 
--- Jump to start/end
-vim.keymap.set('n', '<leader>h', '_')
-vim.keymap.set('n', '<leader>l', '$')
-
 -- Bracket shortcuts
--- vim.keymap.set('i', '<leader>cb', '{}<left>', { desc = '[C]urly brackets' })
--- vim.keymap.set('i', '<leader>sb', '[]<left>', { desc = '[S]quare brackets' })
 vim.keymap.set('i', '<c-k>', '{}<left><CR><ESC>ko', { desc = 'Curly brackets' })
 vim.keymap.set('i', '<c-j>', '[]<left>', { desc = 'Square brackets' })
 vim.keymap.set('i', '<c-l>', '()<left>', { desc = 'Parenthesis' })
-
--- Jump 5 rows at a time.
--- vim.keymap.set('n', 'K', '5k', { noremap = true, silent = true })
--- vim.keymap.set('n', 'J', '5j', { noremap = true, silent = true })
 
 -- Enter normal mode when in terminal
 vim.keymap.set('t', 'jkl', '<C-\\><C-n>')
 vim.keymap.set('n', 'ts', ':terminal<CR>', { desc = '[t]erminal [s]tart' })
 vim.keymap.set('n', '<leader>nt', ':rightbelow vsplit | terminal bash --login<CR><C-w>l:startinsert<CR>', { desc = '[n]ew [t]erminal' })
 
--- Code folding
-vim.keymap.set('n', '<leader>ff', 'zc', { desc = '[F]old current scope' })
-vim.keymap.set('n', '<leader>u', 'zo', { desc = '[U]nfold current scope' })
-
--- Instant fold to certain fold level
-vim.keymap.set('n', '<leader>f1', ':set foldlevel=1<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>f2', ':set foldlevel=2<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>f3', ':set foldlevel=3<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>f4', ':set foldlevel=4<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>f5', ':set foldlevel=5<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>f6', ':set foldlevel=6<CR>', { noremap = true, silent = true })
-
 -- Buffer split
 vim.keymap.set('n', '<leader>vs', ':vsplit<CR><C-w>l', { desc = '[V]ertical [S]plit' })
-
--- Newline at current cursor with indentation
-vim.keymap.set('i', '<C-n>', '<CR><ESC>ko', { noremap = true, silent = true })
 
 ----------------------------- nvim-tree ---------------------------
 vim.keymap.set('n', '<leader>E', ':NvimTreeFindFileToggle<CR>')
@@ -157,19 +64,6 @@ vim.keymap.set('n', '<leader>B',
 )
 vim.keymap.set('n', '<F10>', dap.step_over, { desc = 'Step Over' })
 vim.keymap.set('n', '<F11>', dap.step_into, { desc = 'Step Into' })
-
-
---------------------------- hop ---------------------------
-local hop = require('hop')
-local directions = require('hop.hint').HintDirection
-vim.keymap.set('n', 'J', function()
-  hop.hint_words({ direction = directions.AFTER_CURSOR, current_line_only = false, hint_offset = 0 })
-end, { remap = true })
-
-vim.keymap.set('n', 'K', function()
-  hop.hint_words({ direction = directions.BEFORE_CURSOR, current_line_only = false, hint_offset = 0 })
-end, { remap = true })
-
 
 --------------------------- lsp ---------------------------
 -- Use LspAttach autocommand to only map the following keys
@@ -214,13 +108,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         end
       })
     end, { desc = 'Hover diagnostics' })
-    -- vim.keymap.set('n', '<c-k>', vim.lsp.buf.signature_help, opts)
-    -- vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
-    -- vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
-    -- vim.keymap.set('n', '<space>wl', function()
-    --   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    -- end, opts)
-    -- vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
   end,
 })
 
@@ -246,13 +133,6 @@ vim.keymap.set(
   function() require("trouble").previous({skip_groups = true, jump = true}) end,
   { desc = 'Skip to previous trouble item' }
 )
-
--- vim.keymap.set("n", "<leader>xx", function() require("trouble").toggle() end)
--- vim.keymap.set("n", "<leader>xd", function() require("trouble").toggle("document_diagnostics") end)
--- vim.keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end)
--- vim.keymap.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end)
--- vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)
-
 
 --------------------------- luasnip ---------------------------
 local ls = require 'luasnip';
@@ -282,6 +162,3 @@ vim.keymap.set("i", "<A-j>", function()
   end
 end, { silent = true })
 
-
---------------------------- undotree ---------------------------
-vim.keymap.set('n', '<leader>ut', vim.cmd.UndotreeToggle)

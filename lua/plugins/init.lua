@@ -129,9 +129,6 @@ require('lazy').setup({
     run = ':TSUpdate',
   },
 
-  -- vim easymotion/hop
-  'smoka7/hop.nvim',
-
   -- Debug adapter protocol
   'simrat39/rust-tools.nvim',
   'mfussenegger/nvim-dap',
@@ -142,9 +139,6 @@ require('lazy').setup({
 
   -- Illuminate (highlights usages of word under cursor
   'RRethy/vim-illuminate',
-
-  -- Improve visual layout of inputs boxes
-  'stevearc/dressing.nvim',
 
   -- Scrollbar/Minimap
   "petertriho/nvim-scrollbar",
@@ -173,9 +167,6 @@ require('lazy').setup({
     }
   },
 
-  -- Nvim autotag
-  "windwp/nvim-ts-autotag",
-
   -- Undotree
   'mbbill/undotree',
 
@@ -198,13 +189,10 @@ require('plugins.lsp')
 require('plugins.nvim-cmp')
 require('plugins.luasnip')
 require('plugins.trouble')
-require('plugins.hop')
 require('plugins.dap')
 require('plugins.illuminate')
-require('plugins.dressing')
 require('plugins.nvim-scrollbar')
 require('plugins.autosave')
-require('plugins.nvim-ts-autotag')
 require('plugins.fugitive')
 require('plugins.neoscroll')
 require('plugins.supermaven')
