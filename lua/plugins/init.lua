@@ -173,7 +173,10 @@ require('lazy').setup({
   -- Neoscroll
   'karb94/neoscroll.nvim',
   
+  -- Supermaven AI completion
   "supermaven-inc/supermaven-nvim",
+
+  "ggandor/leap.nvim",
 })
 
 require('plugins.telescope')
@@ -196,5 +199,6 @@ require('plugins.autosave')
 require('plugins.fugitive')
 require('plugins.neoscroll')
 require('plugins.supermaven')
+require('plugins.leap')
 
 -- vim: ts=2 sts=2 sw=2 et
