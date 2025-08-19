@@ -31,8 +31,36 @@ vim.keymap.set('n', '<leader>vs', ':vsplit<CR><C-w>l', { desc = '[V]ertical [S]p
 vim.keymap.set('n', '<leader>E', ':NvimTreeFindFileToggle<CR>')
 vim.keymap.set('n', '<leader>e', '::NvimTreeFocus<CR>')
 
+----------------------------- trouble ---------------------------
+local trouble = require('trouble')
+vim.keymap.set(
+  "n",
+  "<leader>xw",
+  function() trouble.toggle("diagnostics") end,
+  { desc = 'Toggle workspace trouble tab.' }
+)
 
--- --------------------------- telescope ---------------------------
+vim.keymap.set(
+  "n",
+  "<leader>xn",
+  function() 
+    trouble.next("diagnostics") 
+    trouble.jump("diagnostics")
+  end,
+  { desc = 'Skip to next trouble item' }
+)
+
+vim.keymap.set(
+  "n",
+  "<leader>xp",
+  function() 
+    trouble.prev("diagnostics") 
+    trouble.jump("diagnostics")
+  end,
+  { desc = 'Skip to previous trouble item' }
+)
+
+-- --------------------------- telescope -------------------------
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>/', function()
@@ -110,29 +138,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, { desc = 'Hover diagnostics' })
   end,
 })
-
-
---------------------------- trouble ---------------------------
-vim.keymap.set(
-  "n",
-  "<leader>xw",
-  function() require("trouble").toggle("workspace_diagnostics") end,
-  { desc = 'Toggle workspace trouble tab.' }
-)
-
-vim.keymap.set(
-  "n",
-  "<leader>xn",
-  function() require("trouble").next({skip_groups = true, jump = true}) end,
-  { desc = 'Skip to next trouble item' }
-)
-
-vim.keymap.set(
-  "n",
-  "<leader>xp",
-  function() require("trouble").previous({skip_groups = true, jump = true}) end,
-  { desc = 'Skip to previous trouble item' }
-)
 
 --------------------------- luasnip ---------------------------
 local ls = require 'luasnip';

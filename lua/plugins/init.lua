@@ -56,7 +56,8 @@ require('lazy').setup({
   -- Trouble, displays a tab of lsp diagnostics errors
   {
     "folke/trouble.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    cmd = "Trouble",
   },
 
   -- Autocompletion/snippets
@@ -172,10 +173,11 @@ require('lazy').setup({
 
   -- Neoscroll
   'karb94/neoscroll.nvim',
-  
+
   -- Supermaven AI completion
   "supermaven-inc/supermaven-nvim",
 
+  -- Leap motions 
   "ggandor/leap.nvim",
 })
 
